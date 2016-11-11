@@ -1,6 +1,7 @@
 
 package org.usfirst.frc.team1072.robot;
 
+import org.usfirst.frc.team1072.robot.subsystems.Claw;
 import org.usfirst.frc.team1072.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team1072.robot.subsystems.Wrist;
 
@@ -23,6 +24,7 @@ public class Robot extends IterativeRobot {
 	public static Drivetrain dt;
 	public static OI oi;
 	public static Wrist manualWrist;
+	public static Claw claw;
 
     Command autonomousCommand;
     SendableChooser chooser;
@@ -35,6 +37,7 @@ public class Robot extends IterativeRobot {
 		oi = new OI();
 		dt = new Drivetrain();
 		manualWrist = new Wrist();
+		claw = new Claw();
     }
 	
 	/**
