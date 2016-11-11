@@ -15,10 +15,13 @@ public class Wrist extends Subsystem {
     
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
-	Victor wrist = new Victor(RobotMap.Robot.DT.Victors.WRIST);
+	private Victor wrist;
 	private static final double maxa = 0.3;
 	private boolean thin = false;
 	
+	public Wrist(){
+	    wrist = new Victor(RobotMap.Robot.DT.Victors.WRIST);
+	}
 	
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
