@@ -18,7 +18,7 @@ public class ManualWristCommand extends Command {
 
 	@Override
 	protected void execute() {
-		Robot.manualWrist.setSpeed(Robot.oi.getGp().getRightX().get());
+		Robot.manualWrist.setSpeed(Robot.oi.getGp().getRightY().get());
 	}
 
 	@Override
