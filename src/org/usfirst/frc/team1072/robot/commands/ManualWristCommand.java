@@ -7,6 +7,10 @@ import edu.wpi.first.wpilibj.command.Command;
 
 public class ManualWristCommand extends Command {
 	
+	public ManualWristCommand() {
+		requires(Robot.manualWrist);
+	}
+	
 	@Override
 	protected void end() {
 		// TODO Auto-generated method stub

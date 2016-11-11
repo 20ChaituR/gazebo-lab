@@ -2,11 +2,8 @@ package org.usfirst.frc.team1072.robot.subsystems;
 
 import org.usfirst.frc.team1072.robot.RobotMap;
 import org.usfirst.frc.team1072.robot.RobotMap.Robot;
-<<<<<<< Updated upstream
 import org.usfirst.frc.team1072.robot.commands.ManualWristCommand;
-=======
 import org.usfirst.frc.team1072.robot.RobotMap.Robot.DT.Victors;
->>>>>>> Stashed changes
 
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Talon;

@@ -12,6 +12,10 @@ public class ClawCommand extends Command{
 	private double speed;
 	private boolean openvar;
 	
+	public ClawCommand() {
+		requires(Robot.claw);
+	}
+	
 	@Override
 	protected void end() {
 		// TODO Auto-generated method stub
