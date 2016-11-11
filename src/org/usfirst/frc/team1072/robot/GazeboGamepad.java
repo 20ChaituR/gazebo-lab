@@ -690,7 +690,7 @@ public class GazeboGamepad extends Joystick
         
     }
     
-    class Axis {
+    public class Axis {
         
         private int port;
 

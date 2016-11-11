@@ -2,6 +2,7 @@ package org.usfirst.frc.team1072.robot.subsystems;
 
 import org.usfirst.frc.team1072.robot.RobotMap;
 import org.usfirst.frc.team1072.robot.RobotMap.Robot;
+import org.usfirst.frc.team1072.robot.commands.ManualWristCommand;
 
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Talon;
@@ -26,6 +27,7 @@ public class Wrist extends Subsystem {
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
+    	setDefaultCommand(new ManualWristCommand());
     }
     
     public void setSpeed(double speed){
@@ -44,7 +46,7 @@ public class Wrist extends Subsystem {
 		return wrist.get();
 	}
 
-	public void helperSpeed(double speed){
+	private void helperSpeed(double speed){
 		if(speed <= 1.0 && speed>=-1.0){
 			if(thin)
 				wrist.set(-speed);

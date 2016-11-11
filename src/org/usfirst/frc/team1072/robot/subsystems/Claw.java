@@ -12,19 +12,16 @@ public class Claw extends Subsystem {
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 	
-	double speed;
-	int motorNumber = 7;
-	int digitalInputChannel = 5;
-	Victor clawVictor;
-	double deadzone;
-	boolean inverted = false;
-	DigitalInput digitalInput;
+	private double speed;
+	private final int motorNumber = 7;
+	private final int digitalInputChannel = 5;
+	private Victor clawVictor;
+	private double deadzone;
+	private boolean inverted = false;
+	private DigitalInput digitalInput;
 	
-	public Claw(double deadzone, int motorNumber, int digitalInputChannel) {
-		this.motorNumber = motorNumber;
+	public Claw() {
 		clawVictor = new Victor(motorNumber);
-		this.deadzone = deadzone;
-		this.digitalInputChannel = digitalInputChannel;
 		digitalInput = new DigitalInput(digitalInputChannel);
 	}
 	
@@ -34,28 +31,14 @@ public class Claw extends Subsystem {
 	public int getDigitalInputChannel() {
 		return digitalInputChannel;
 	}
-
-	/**
-	 * @param digitalInputChannel the digitalInputChannel to set
-	 */
-	public void setDigitalInputChannel(int digitalInputChannel) {
-		this.digitalInputChannel = digitalInputChannel;
-	}
-
+	
 	/**
 	 * @return the motorNumber
 	 */
 	public int getMotorNumber() {
 		return motorNumber;
 	}
-
-	/**
-	 * @param motorNumber the motorNumber to set
-	 */
-	public void setMotorNumber(int motorNumber) {
-		this.motorNumber = motorNumber;
-	}
-
+	
 	/**
 	 * @return the clawVictor
 	 */
