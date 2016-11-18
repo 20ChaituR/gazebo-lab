@@ -603,7 +603,7 @@ public class GazeboGamepad extends Joystick
         return true;
     }
 
-    class GamepadButton extends Button {
+    public class GamepadButton extends Button {
 
         private int port;
         
@@ -690,7 +690,7 @@ public class GazeboGamepad extends Joystick
         
     }
     
-    class Axis {
+    public class Axis {
         
         private int port;
 

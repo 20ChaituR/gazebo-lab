@@ -21,8 +21,8 @@ public class Drivetrain extends Subsystem {
         backLeft = new Talon(Talons.BACK_LEFT);
         frontRight = new Talon(Talons.FRONT_RIGHT);
         backRight = new Talon(Talons.BACK_RIGHT);
-        leftEncoder = new Encoder(Talons.FRONT_LEFT, Talons.BACK_LEFT);
-        rightEncoder = new Encoder(Talons.FRONT_RIGHT, Talons.BACK_RIGHT);
+        //leftEncoder = new Encoder(Talons.FRONT_LEFT, Talons.BACK_LEFT);
+        //rightEncoder = new Encoder(Talons.FRONT_RIGHT, Talons.BACK_RIGHT);
     }
     
     public void initDefaultCommand() {

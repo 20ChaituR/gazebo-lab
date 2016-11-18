@@ -3,6 +3,7 @@ package org.usfirst.frc.team1072.robot;
 import edu.wpi.first.wpilibj.buttons.Button;
 
 import org.usfirst.frc.team1072.robot.RobotMap.OI.GP;
+import org.usfirst.frc.team1072.robot.commands.ClawCommand;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -14,6 +15,7 @@ public class OI {
     
     public OI(){
         gp = new GazeboGamepad(GP.GP);
+        gp.getButtonX().whileHeld(new ClawCommand());
     }
 
     /**
