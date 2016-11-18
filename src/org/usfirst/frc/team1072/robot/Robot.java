@@ -1,6 +1,7 @@
 
 package org.usfirst.frc.team1072.robot;
 
+import org.usfirst.frc.team1072.robot.commands.ClawCommand;
 import org.usfirst.frc.team1072.robot.subsystems.Claw;
 import org.usfirst.frc.team1072.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team1072.robot.subsystems.Wrist;

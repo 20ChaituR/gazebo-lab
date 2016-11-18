@@ -2,6 +2,7 @@ package org.usfirst.frc.team1072.robot.subsystems;
 
 import org.usfirst.frc.team1072.robot.commands.ClawCommand;
 
+import edu.wpi.first.wpilibj.AnalogPotentiometer;
 import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -17,14 +18,17 @@ public class Claw extends Subsystem {
 	private double speed;
 	private final int motorNumber = 7;
 	private final int digitalInputChannel = 5;
+	private final int analogPotentiometerChannel = 3;
 	private Victor clawVictor;
 	private double deadzone;
 	private boolean inverted = false;
 	private DigitalInput digitalInput;
+	private AnalogPotentiometer analogPotentiometer;
 	
 	public Claw() {
 		clawVictor = new Victor(motorNumber);
 		digitalInput = new DigitalInput(digitalInputChannel);
+		analogPotentiometer = new AnalogPotentiometer(analogPotentiometerChannel);
 	}
 	
 	/**
@@ -34,6 +38,27 @@ public class Claw extends Subsystem {
 		return digitalInputChannel;
 	}
 	
+	/**
+	 * @return the analogPotentiometer
+	 */
+	public AnalogPotentiometer getAnalogPotentiometer() {
+		return analogPotentiometer;
+	}
+
+	/**
+	 * @param analogPotentiometer the analogPotentiometer to set
+	 */
+	public void setAnalogPotentiometer(AnalogPotentiometer analogPotentiometer) {
+		this.analogPotentiometer = analogPotentiometer;
+	}
+
+	/**
+	 * @return the analogPotentiometerChannel
+	 */
+	public int getAnalogPotentiometerChannel() {
+		return analogPotentiometerChannel;
+	}
+
 	/**
 	 * @return the motorNumber
 	 */
@@ -137,7 +162,7 @@ public class Claw extends Subsystem {
 
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
-        setDefaultCommand(new ClawCommand());
+        //setDefaultCommand(new ClawCommand());
     }
 }
 

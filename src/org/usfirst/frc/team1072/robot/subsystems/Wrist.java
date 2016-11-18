@@ -19,7 +19,7 @@ public class Wrist extends Subsystem {
     // here. Call these from Commands.
 	private Victor wrist;
 	private static final double maxa = 0.3;
-	private boolean thin = false;
+	private boolean thin = true;
 	
 	public Wrist(){
 	    wrist = new Victor(RobotMap.Robot.DT.Victors.WRIST);
