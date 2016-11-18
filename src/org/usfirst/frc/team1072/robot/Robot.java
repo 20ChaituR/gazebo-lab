@@ -2,7 +2,6 @@
 package org.usfirst.frc.team1072.robot;
 
 import org.usfirst.frc.team1072.robot.commands.ClawCommand;
-import org.usfirst.frc.team1072.robot.commands.JoelClawCommand;
 import org.usfirst.frc.team1072.robot.subsystems.Claw;
 import org.usfirst.frc.team1072.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team1072.robot.subsystems.Wrist;
@@ -40,7 +39,6 @@ public class Robot extends IterativeRobot {
 		dt = new Drivetrain();
 		manualWrist = new Wrist();
 		claw = new Claw();
-		oi.getGp().getButtonX().whenPressed(new JoelClawCommand());
     }
 	
 	/**
