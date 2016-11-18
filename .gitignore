@@ -14,4 +14,8 @@ hs_err_pid*
 
 *.class
 
+<<<<<<< HEAD
 *.class
+=======
+dist/FRCUserProgramSim.jar
+>>>>>>> origin/master
