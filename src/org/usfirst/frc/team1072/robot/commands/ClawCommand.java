@@ -53,10 +53,10 @@ public class ClawCommand extends Command{
 		// TODO Auto-generated method stub
 		//check if the claw is at maximum
 		if (openvar) {
-			if (Robot.claw.getClawVictor().getPosition() == 1) {
+			if (Robot.claw.getAnalogPotentiometer().pidGet() == 1) {
 				return true;
 			}
-		} else if (Robot.claw.getClawVictor().getPosition() == 0) {
+		} else if (Robot.claw.getAnalogPotentiometer().pidGet() == 0) {
 			return true;
 		}
 		return false;
