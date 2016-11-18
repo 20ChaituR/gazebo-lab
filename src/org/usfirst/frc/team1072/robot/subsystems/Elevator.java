@@ -11,9 +11,9 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class Elevator extends PIDSubsystem {
     Victor v;
     AnalogPotentiometer ap;
-    public static final double P = 0;
+    public static final double P = 1;
     public static final double I = 0;
-    public static final double D = 0;
+    public static final double D = 1;
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
@@ -30,9 +30,9 @@ public class Elevator extends PIDSubsystem {
     }
 	
 	public void setSpeed(double speed){
-		if(speed<-1.0) speed = -1.0;
-		else if(speed<1.0) speed = 1.0;
-		v.set(speed);
+		if(speed<-1.0) setSetpoint(-1.0);
+		else if(speed<1.0) setSetpoint(1.0);
+		setSetpoint(speed);
 	}
 	public double getSpeed(){
 		return v.get();
@@ -44,12 +44,12 @@ public class Elevator extends PIDSubsystem {
 
 	@Override
 	protected double returnPIDInput() {
-		return 0;
+		return getSpeed();
 	}
 
 	@Override
 	protected void usePIDOutput(double output) {
-		
+		v.set(output);
 	}
 	
 		
