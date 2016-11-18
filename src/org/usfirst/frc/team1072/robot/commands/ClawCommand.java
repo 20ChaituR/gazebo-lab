@@ -13,6 +13,7 @@ public class ClawCommand extends Command{
 	
 	public ClawCommand() {
 		requires(Robot.claw);
+		System.out.println("Created a ClawCommand");
 	}
 	
 	@Override
@@ -20,12 +21,13 @@ public class ClawCommand extends Command{
 		// TODO Auto-generated method stub
 		//finish up, set claw speed to 0
 		Robot.claw.setSpeed(0.0);
+		System.out.println("Ended a ClawCommand");
 	}
 
 	@Override
 	protected void execute() {
 		// TODO Auto-generated method stub
-		
+		System.out.println("Executed a claw command");
 	}
 
 	@Override
@@ -38,17 +40,18 @@ public class ClawCommand extends Command{
 			openvar = true;
 			Robot.claw.setSpeed(0.5);
 		}
-		
+		System.out.println("Initialized a ClawCommand");
 	}
 
 	@Override
 	protected void interrupted() {
 		// TODO Auto-generated method stub
-		
+		System.out.println("Interrupted a ClawCommand");
 	}
 
 	@Override
 	protected boolean isFinished() {
+	    System.out.println("Checked if a ClawCommand was finished");
 		// TODO Auto-generated method stub
 		//check if the claw is at maximum
 //		if (openvar) {
@@ -59,6 +62,13 @@ public class ClawCommand extends Command{
 //			return true;
 //		}
 		//isTimedOut()
+		if (openvar) {
+			if (Robot.claw.getClawVictor().get() == 1) {
+				return true;
+			}
+		} else if (Robot.claw.getClawVictor().get() == 0) {
+			return true;
+		}
 		return false;
 	}
 
