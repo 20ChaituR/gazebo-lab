@@ -30,7 +30,6 @@ public class ClawCommand extends Command{
 
 	@Override
 	protected void initialize() {
-		// TODO Auto-generated method stub
 		//set claw speed to opening/closing depending on current state
 		if (openvar) {
 			openvar = false;
@@ -59,6 +58,15 @@ public class ClawCommand extends Command{
 		} else if (Robot.claw.getAnalogPotentiometer().pidGet() == 0) {
 			return true;
 		}
+
+//		if (openvar) {
+//			if (Robot.claw.getClawVictor().getPosition() == 1) {
+//				return true;
+//			}
+//		} else if (Robot.claw.getClawVictor().getPosition() == 0) {
+//			return true;
+//		}
+		//isTimedOut()
 		return false;
 	}
 

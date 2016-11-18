@@ -147,6 +147,18 @@ public class Claw extends Subsystem {
 	public double getSpeed() {
 		return speed;
 	}
+	
+	public void openClaw() {
+		if (!(clawVictor.getPosition() >= 1 - deadzone && clawVictor.getPosition() <= 1)) {
+			setSpeed(0.5);
+		}
+	}
+	
+	public void closeClaw() {
+		if (!(clawVictor.getPosition() <= deadzone && clawVictor.getPosition() >= 0)) {
+			setSpeed(-0.5);
+		}
+	}
 
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
