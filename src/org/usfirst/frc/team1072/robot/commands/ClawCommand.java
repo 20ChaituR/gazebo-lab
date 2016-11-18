@@ -30,7 +30,6 @@ public class ClawCommand extends Command{
 
 	@Override
 	protected void initialize() {
-		// TODO Auto-generated method stub
 		//set claw speed to opening/closing depending on current state
 		if (openvar) {
 			openvar = false;
@@ -52,13 +51,14 @@ public class ClawCommand extends Command{
 	protected boolean isFinished() {
 		// TODO Auto-generated method stub
 		//check if the claw is at maximum
-		if (openvar) {
-			if (Robot.claw.getClawVictor().getPosition() == 1) {
-				return true;
-			}
-		} else if (Robot.claw.getClawVictor().getPosition() == 0) {
-			return true;
-		}
+//		if (openvar) {
+//			if (Robot.claw.getClawVictor().getPosition() == 1) {
+//				return true;
+//			}
+//		} else if (Robot.claw.getClawVictor().getPosition() == 0) {
+//			return true;
+//		}
+		//isTimedOut()
 		return false;
 	}
 
