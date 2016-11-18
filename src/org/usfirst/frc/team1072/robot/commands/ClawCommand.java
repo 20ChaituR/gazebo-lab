@@ -20,6 +20,7 @@ public class ClawCommand extends Command{
 		// TODO Auto-generated method stub
 		//finish up, set claw speed to 0
 		Robot.claw.setSpeed(0.0);
+		openvar = !openvar;
 	}
 
 	@Override
