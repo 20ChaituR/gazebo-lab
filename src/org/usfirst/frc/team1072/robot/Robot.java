@@ -35,10 +35,11 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
+        claw = new Claw();
 		oi = new OI();
 		dt = new Drivetrain();
 		manualWrist = new Wrist();
-		claw = new Claw();
+		
     }
 	
 	/**
