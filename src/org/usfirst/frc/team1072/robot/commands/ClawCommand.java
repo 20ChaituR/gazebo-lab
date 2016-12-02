@@ -20,7 +20,6 @@ public class ClawCommand extends Command{
 	protected void end() {
 		// TODO Auto-generated method stub
 		//finish up, set claw speed to 0
-		openvar = !openvar;
 		System.out.println("Ended a ClawCommand");
 	}
 
@@ -28,6 +27,7 @@ public class ClawCommand extends Command{
 	protected void execute() {
 		// TODO Auto-generated method stub
 		System.out.println("Executed a claw command");
+		setTimeout(1);
 	}
 
 	@Override
@@ -61,7 +61,9 @@ public class ClawCommand extends Command{
 //		} else if (Robot.claw.getClawVictor().getPosition() == 0) {
 //			return true;
 //		}
-		//isTimedOut()
+		if(isTimedOut()){
+			return true;
+		}
 		return false;
 	}
 
