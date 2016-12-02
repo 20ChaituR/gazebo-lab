@@ -6,6 +6,7 @@ import org.usfirst.frc.team1072.robot.commands.ClawCommand;
 import org.usfirst.frc.team1072.robot.subsystems.Claw;
 import org.usfirst.frc.team1072.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team1072.robot.subsystems.Wrist;
+import org.usfirst.frc.team1072.robot.OI;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;

@@ -24,6 +24,11 @@ public class AutonClaw extends CommandGroup {
         // e.g. if Command1 requires chassis, and Command2 requires arm,
         // a CommandGroup containing them would require both the chassis and the
         // arm.
+		System.out.println("executed a autoncommand");
+		ClawCommand c = new ClawCommand();
+		addSequential(c);
+		addSequential(new TimeCommand(2));
+		addSequential(new CancelCommand(c));
     }
 
 	@Override
@@ -36,11 +41,6 @@ public class AutonClaw extends CommandGroup {
 	protected void execute() {
 		// TODO Auto-generated method stub
 		super.execute();
-		System.out.println("executed a autoncommand");
-		ClawCommand c = new ClawCommand();
-		addSequential(c);
-		setTimeout(1);
-		c.cancel();
 	}
 
 	@Override
