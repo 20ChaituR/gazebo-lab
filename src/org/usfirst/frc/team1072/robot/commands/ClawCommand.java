@@ -20,6 +20,10 @@ public class ClawCommand extends Command{
 	protected void end() {
 		// TODO Auto-generated method stub
 		//finish up, set claw speed to 0
+<<<<<<< HEAD
+=======
+		Robot.claw.setSpeed(0.0);
+>>>>>>> origin/master
 		System.out.println("Ended a ClawCommand");
 	}
 
