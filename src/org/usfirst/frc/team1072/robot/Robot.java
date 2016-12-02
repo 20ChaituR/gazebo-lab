@@ -1,6 +1,8 @@
 
 package org.usfirst.frc.team1072.robot;
 
+import org.usfirst.frc.team1072.robot.commands.AutonClaw;
+import org.usfirst.frc.team1072.robot.commands.ClawCommand;
 import org.usfirst.frc.team1072.robot.subsystems.Claw;
 import org.usfirst.frc.team1072.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team1072.robot.subsystems.Wrist;
@@ -34,10 +36,11 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
+        claw = new Claw();
 		oi = new OI();
 		dt = new Drivetrain();
 		manualWrist = new Wrist();
-		claw = new Claw();
+		
     }
 	
 	/**
@@ -63,8 +66,8 @@ public class Robot extends IterativeRobot {
 	 * or additional comparisons to the switch structure below with additional strings & commands.
 	 */
     public void autonomousInit() {
-        autonomousCommand = (Command) chooser.getSelected();
-        
+    		
+        autonomousCommand = (Command) new AutonClaw();
 		/* String autoSelected = SmartDashboard.getString("Auto Selector", "Default");
 		switch(autoSelected) {
 		case "My Auto":

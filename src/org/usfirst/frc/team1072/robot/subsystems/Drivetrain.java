@@ -1,33 +1,94 @@
 package org.usfirst.frc.team1072.robot.subsystems;
 
-import edu.wpi.first.wpilibj.Encoder;
-import edu.wpi.first.wpilibj.Talon;
-import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.interfaces.Gyro;
+import org.usfirst.frc.team1072.robot.commands.ArcadeDriveCommand;
 
-import org.usfirst.frc.team1072.robot.RobotMap.Robot.DT.Talons;
+import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
  *
  */
 public class Drivetrain extends Subsystem {
     
-    private Talon frontLeft, backLeft, frontRight, backRight;
-    private Encoder leftEncoder, rightEncoder;
-    private Gyro gyro;
-    
-    public Drivetrain(){
-        frontLeft = new Talon(Talons.FRONT_LEFT);
-        backLeft = new Talon(Talons.BACK_LEFT);
-        frontRight = new Talon(Talons.FRONT_RIGHT);
-        backRight = new Talon(Talons.BACK_RIGHT);
-        //leftEncoder = new Encoder(Talons.FRONT_LEFT, Talons.BACK_LEFT);
-        //rightEncoder = new Encoder(Talons.FRONT_RIGHT, Talons.BACK_RIGHT);
-    }
-    
+
+    // Put methods for controlling this subsystem
+    // here. Call these from Commands.
+	
+	private Wheel fl;
+	private Wheel fr;
+	private Wheel bl;
+	private Wheel br;
+	
+	public Drivetrain() {
+		fl = new Wheel(0, 0, 0);
+		fr = new Wheel(1, 1, 1);
+		bl = new Wheel(2, 2, 2);
+		br = new Wheel(3, 3, 3);
+	}
+	
+	/**
+	 * @return the fl
+	 */
+	public Wheel getFl() {
+		return fl;
+	}
+
+	/**
+	 * @param fl the fl to set
+	 */
+	public void setFl(Wheel fl) {
+		this.fl = fl;
+	}
+
+	/**
+	 * @return the fr
+	 */
+	public Wheel getFr() {
+		return fr;
+	}
+
+	/**
+	 * @param fr the fr to set
+	 */
+	public void setFr(Wheel fr) {
+		this.fr = fr;
+	}
+
+	/**
+	 * @return the bl
+	 */
+	public Wheel getBl() {
+		return bl;
+	}
+
+	/**
+	 * @param bl the bl to set
+	 */
+	public void setBl(Wheel bl) {
+		this.bl = bl;
+	}
+
+	/**
+	 * @return the br
+	 */
+	public Wheel getBr() {
+		return br;
+	}
+
+	/**
+	 * @param br the br to set
+	 */
+	public void setBr(Wheel br) {
+		this.br = br;
+	}
+
+	public void arcadeDrive(double speed, double turn) {
+		
+	}
+
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
+    	setDefaultCommand(new ArcadeDriveCommand());
     }
 }
 
